@@ -3,7 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
+import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidget from "../CartWidget/CartWidget";
 const NavBar = () => {
   return (
     <>
@@ -17,8 +18,13 @@ const NavBar = () => {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Productos</Nav.Link>
+            <NavDropdown title="Productos" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Motorola</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Samsung </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Lg</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="#action3">Contacto</Nav.Link>
+            <CartWidget />
           </Nav>
           <Form className="d-flex">
             <FormControl
