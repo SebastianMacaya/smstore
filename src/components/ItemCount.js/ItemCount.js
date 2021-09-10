@@ -4,8 +4,7 @@ import Card from "react-bootstrap/Card";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [counter, setCounter] = useState(1);
-  stock = 5;
-  initial = 1;
+
   const incrementOption = () => {
     if (counter < stock) {
       setCounter(counter + 1);
@@ -17,9 +16,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       setCounter(counter - 1);
     }
   };
+
   return (
     <>
-      <Card style={{ width: "10rem" }}>
+      <Card style={{ width: "13rem" }}>
         <Card.Title className="text-center">{counter}</Card.Title>
         <Card.Body className="d-flex justify-content-between">
           <Button variant="primary" onClick={incrementOption}>
@@ -28,6 +28,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           <Button variant="primary" onClick={decrementOption}>
             -
           </Button>
+          <Button onClick={onAdd}>Agregar</Button>
         </Card.Body>
       </Card>
     </>
