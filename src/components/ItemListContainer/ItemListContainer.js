@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getFetch } from "../../utils/mock";
 import ItemList from "../ItemList/ItemList";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -16,8 +16,6 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div>
-      <h1> {greeting}</h1>
-
       {loading ? <h2>Cargando...</h2> : <ItemList productos={productos} />}
     </div>
   );

@@ -1,5 +1,8 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+
 const Item = ({ producto }) => {
   const onAdd = () => {
     alert("Has agregado un producto");
