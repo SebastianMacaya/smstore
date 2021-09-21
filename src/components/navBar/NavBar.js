@@ -5,11 +5,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
       <Navbar bg="ligth" expand="lg">
-        <Navbar.Brand href="#">SM STORE</Navbar.Brand>
+        <Link to="/" exact>
+          <Navbar.Brand href="#">SM STORE</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -19,9 +22,17 @@ const NavBar = () => {
           >
             <Nav.Link href="#action1">Home</Nav.Link>
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Motorola</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Samsung </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Lg</NavDropdown.Item>
+              <Link to="/categoria/motorola" exact>
+                <NavDropdown.Item href="#action/3.1">Motorola</NavDropdown.Item>
+              </Link>
+              <Link to="/categoria/samsung" exact>
+                <NavDropdown.Item href="#action/3.2">Samsung </NavDropdown.Item>
+              </Link>
+              <Link to="/categoria/nokia" exact>
+                <NavDropdown.Item href="/categoria/nokia">
+                  Nokia
+                </NavDropdown.Item>
+              </Link>
             </NavDropdown>
             <Nav.Link href="#action3">Contacto</Nav.Link>
             <CartWidget />

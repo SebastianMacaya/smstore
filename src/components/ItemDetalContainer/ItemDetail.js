@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 const ItemDetail = ({ item }) => {
   return (
     <>
@@ -9,7 +11,11 @@ const ItemDetail = ({ item }) => {
         </div>
         <h3>${item.price}</h3>
         <div className="card-footer">
-          <button className="btn btn-outline-primary btn-block">volver</button>
+          <Link to="/">
+            <button className="btn btn-outline-primary btn-block">
+              volver
+            </button>
+          </Link>
         </div>
       </div>
     </>
